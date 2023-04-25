@@ -12,7 +12,9 @@ function isNumeric(value) {
 }
 
 /**
- * Validate the inputs for the division operation
+ *
+ * 
+ * 
  * @param {string} dividend - dividend input value
  * @param {string} divider - divider input value
  * @returns {string|null} error message if issue with inputs, null otherwise
@@ -79,3 +81,11 @@ form.addEventListener("submit", (event) => {
   result.innerText = dividend / divider;
 });
 */
+
+const x = NaN;
+
+console.log(x === NaN); //false
+
+console.log(Number.isNaN(x)); //true
+
+console.log(x !== x); //true
