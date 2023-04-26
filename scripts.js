@@ -3,24 +3,19 @@ const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
 
 /**
- * Check if given value is numeric and not an empty string
- * @param {*} value - value to check
- * @returns {boolean} Whether value is numeric and not an empty string
+ * Checks if given value is numeric and not empty.
+ * @param {string|number} value - The value to check.
+ * @returns {boolean} - True if the value is numeric and not empty, false otherwise.
  */
-function isNumeric(value) {
-  return !isNaN(value) && value !== "";
-}
+const isNumeric = (value) => !isNaN(value) && value !== "";
 
 /**
- *
- * 
- * 
  * @param {string} dividend - dividend input value
  * @param {string} divider - divider input value
  * @returns {string|null} error message if issue with inputs, null otherwise
  * @throws {Error} If inputs are not numeric
  */
-function validateInputs(dividend, divider) {
+const validateInputs = (dividend, divider) => {
   if (dividend === "" || divider === "") {
     return "Division not performed. Both values are required in inputs. Try again.";
   }
@@ -32,7 +27,7 @@ function validateInputs(dividend, divider) {
     return "Division not performed. Invalid number provided. Try again.";
   }
   return null;
-}
+};
 
 // Add submit event listener to the form element
 form.addEventListener("submit", (event) => {
@@ -81,11 +76,3 @@ form.addEventListener("submit", (event) => {
   result.innerText = dividend / divider;
 });
 */
-
-const x = NaN;
-
-console.log(x === NaN); //false
-
-console.log(Number.isNaN(x)); //true
-
-console.log(x !== x); //true
